@@ -1,6 +1,6 @@
 var jewel = {
 	screens: {},
-	settings{
+	settings: {
 		rows: 8,
 		cols: 8,
 		baseScore: 100,
@@ -13,6 +13,11 @@ window.addEventListener("load", function(){
 
 	Modernizr.addTest("standalone", function(){
 		return (window.navigator.standalone != false);
+	});
+
+	yepnope.addPrefix("preload", function(resource){
+		resource.noexec = true;
+		return resource;
 	});
 
 	// Start dynamic loading
@@ -48,6 +53,13 @@ window.addEventListener("load", function(){
 					"scripts/screen.main-menu.js",
 					"scripts/board.js"
 				]
+			}, {
+				test : Modernizr.webworkers,
+				yep : [
+					"scripts/board.worker-interface.js",
+					"preload!scripts/board.worker.js"
+				],
+				nope : "scripts/board.js" 
 			}
 		]);
 	}

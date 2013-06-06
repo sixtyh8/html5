@@ -4,7 +4,7 @@ jewel.screens["splash-screen"] = (function(){
 		firstRun = true;
 
 	function setup(){
-		dom.bind("#splash-screen", "click", function(){
+		dom.bind("#splash-screen .continue", "click", function(){
 			game.showScreen("main-menu");
 		});
 	}
