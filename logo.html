@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	
+	<title>HTML5 Logo</title>
+
+	<script src="scripts/logo.js"></script>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="400"></canvas>
+	<script>
+		
+		var canvas = document.getElementById("canvas"),
+			ctx = canvas.getContext("2d");
+
+		drawBackground(canvas);
+
+		ctx.translate(200, 200);
+		ctx.scale(0.5, 0.5);
+
+		drawLogo(canvas);
+
+	</script>
+</body>
+</html>

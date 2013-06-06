@@ -124,7 +124,7 @@ jewel.board = (function(){
 				fillBoard();
 				events.push({
 					type : "refill",
-					data : getBoard();
+					data : getBoard()
 				});
 			}
 
